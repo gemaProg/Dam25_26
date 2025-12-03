@@ -7,6 +7,7 @@ public static int suma(int a, int b){
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
+
     /*System.out.println("Introduce dos números");
     Scanner sc = new Scanner(System.in);
     int num1 = sc.nextInt();
@@ -23,8 +24,8 @@ void main() {
     int num2 = EntradaSalida.dameOperando2();
     System.out.println(OperacionesPrimitivos.division(num1,num2));*/
 
-    int[] litros = OperacionesArrays.creaArray();
+    /*int[] litros = OperacionesArrays.creaArray();
     OperacionesArrays.cargaManual(litros);
     //OperacionesArrays.imprimirArray(litros);
-    EntradaSalida.imprimirArray(litros);
+    EntradaSalida.imprimirArray(litros);*/
 }

@@ -21,6 +21,8 @@ public class OperacionesPrimitivos {
     public static int division (int a, int b){
             return a/b;
     }
-
+    public static double divisionReal (int a, int b){
+        return (double)a/b;
+    }
 
 }
