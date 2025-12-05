@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class EntradaSalida {
@@ -52,4 +53,19 @@ public class EntradaSalida {
             }
     }
 
+    public static String dameString (String frase){
+        System.out.println(frase);
+        Scanner sc = new Scanner(frase);
+        return sc.nextLine();
+    }
+
+    public static char dameCaracter(String intoduceCaracterAReemplazar) throws IOException {
+        imprimir(intoduceCaracterAReemplazar);
+        char letra = (char) System.in.read();
+        return letra;
+    }
+
+    public static void imprimir(String s) {
+        System.out.println(s);
+    }
 }

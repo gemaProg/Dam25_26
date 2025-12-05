@@ -4,7 +4,7 @@ public static int suma(int a, int b){
     return a+b;
 }
 
-void main() {
+void main() throws IOException {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
 
@@ -28,4 +28,13 @@ void main() {
     OperacionesArrays.cargaManual(litros);
     //OperacionesArrays.imprimirArray(litros);
     EntradaSalida.imprimirArray(litros);*/
+    String texto = EntradaSalida.dameString("Introduce texto");
+    char car1;
+    do {
+        car1 = EntradaSalida.dameCaracter("Intoduce caracter (que exista en el texto) a reemplazar");
+    }while(!OperacionesString.existeCaracter(texto, car1));
+    char car2 = EntradaSalida.dameCaracter("Intoduce caracter final");
+    texto= OperacionesString.reemplazar(texto, car1, car2);
+    EntradaSalida.imprimir(texto);
+
 }
