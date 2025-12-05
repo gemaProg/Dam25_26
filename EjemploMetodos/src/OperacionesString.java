@@ -5,6 +5,9 @@ public class OperacionesString {
      * Contiene
      * Remplazar
      * CharAt
+     * Paso a mayúsculas
+     * Paso a minúsculas
+     * Substring
      */
 
 
