@@ -1,3 +1,5 @@
+package programaciónModular;
+
 public class OperacionesPrimitivos {
     /**
      * Operaciones:
@@ -6,7 +8,7 @@ public class OperacionesPrimitivos {
      * Multiplicación
      * División
      */
-    //Son métodos estáticos porque son métodos a nivel de clase. Aunque creara diferentes objetos de tipo OperacionesPrimitivos sus métodos serían iguales
+    //Son métodos estáticos porque son métodos a nivel de clase. Aunque creara diferentes objetos de tipo programaciónModular.OperacionesPrimitivos sus métodos serían iguales
     public static int suma (int a, int b){
         /*int suma = a + b;
         return suma;*/

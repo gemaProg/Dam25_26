@@ -1,3 +1,5 @@
+package programaciónModular;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -29,9 +31,9 @@ public class OperacionesString {
     }
     public static void remplazar() throws IOException {
         String texto = EntradaSalida.dameString("Introduce texto");
-        /*String texto2 =EntradaSalida.dameString("Intoduce caracter a reemplazar");
+        /*String texto2 =programaciónModular.EntradaSalida.dameString("Intoduce caracter a reemplazar");
         char car1 = texto2.charAt(0);
-        // char car1 = EntradaSalida.dameString("Intoduce caracter a reemplazar").charAt(0);
+        // char car1 = programaciónModular.EntradaSalida.dameString("Intoduce caracter a reemplazar").charAt(0);
         */
         char car1;
         do {

@@ -1,4 +1,4 @@
-package stringMain;
+package stringMainBufferedReaderStringBuilder;
 
 
 import java.util.Scanner;

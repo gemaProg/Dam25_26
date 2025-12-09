@@ -1,3 +1,5 @@
+package programaciónModular;
+
 public class OperacionesArrays {
     /**
      * Operaciones:

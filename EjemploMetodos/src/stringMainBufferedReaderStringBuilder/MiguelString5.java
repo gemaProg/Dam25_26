@@ -1,4 +1,4 @@
-package stringMain;
+package stringMainBufferedReaderStringBuilder;
 
 /*
  * Programa que convierte un texto en minúsculas a mayúsculas.
