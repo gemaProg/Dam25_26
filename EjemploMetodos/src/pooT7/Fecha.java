@@ -1,9 +1,23 @@
 package pooT7;
 
+import java.util.Random;
+
 public class Fecha {
     private int dia;
     private int mes;
     private int anio;
+
+    public Fecha(int dia, int mes, int anyo) {
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anyo;
+    }
+    public Fecha() {
+        Random rand = new Random();
+        dia = rand.nextInt(30) + 1;
+        mes = rand.nextInt(1,13);;
+        anio = rand.nextInt(1980,2030);
+    }
 
     public int getDia(){
         return dia;
