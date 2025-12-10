@@ -20,7 +20,6 @@ public class Gato {
     public Gato(String nombre) {
         this.nombre = nombre;
     }
-
     public Gato(){
         Random random = new Random();
         int posicion = random.nextInt(Constantes.NOMBRES.length);

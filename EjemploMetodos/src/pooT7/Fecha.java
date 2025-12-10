@@ -19,6 +19,18 @@ public class Fecha {
         anio = rand.nextInt(1980,2030);
     }
 
+    public Fecha(String fecha) {
+        //opcion1 substring
+        String diaString = fecha.substring(0, 2);
+        dia = Integer.parseInt(diaString);
+        //int dia = Integer.parseInt(fecha.substring(0,2));
+        //opcion2
+        String []trozos = fecha.split("/");
+        dia = Integer.parseInt(trozos[0]);
+
+
+    }
+
     public int getDia(){
         return dia;
     }
@@ -41,5 +53,8 @@ public class Fecha {
     }
     public void setAnio(int anio){
         this.anio = anio;
+    }
+    public String toString(){
+        return String.format("%02d/%02d/%02d", dia, mes, anio);
     }
 }
