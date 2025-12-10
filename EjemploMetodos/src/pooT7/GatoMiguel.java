@@ -1,10 +1,14 @@
 package pooT7;
 
 import java.util.Random;
-//Tareas
-//1. Hacer una clase, la que queráis
-//2. Hacer un [] de objetos de esa clase
-//3. Hacer un menú para cargar el array/listar/
+
+/**
+ * Tarea menú con array de objetos con opciones CRUD:
+ * Create (alta, manual o random)
+ * Read (listar, consulta filtrada)
+ * Update (cambiar atributo)
+ * Delete (buscar al que eliminar y ponerlo a null)
+ */
 public class GatoMiguel {
     private boolean sexo; //true femenino false masculino
     private String color; //manipularía como un StringBuilder
