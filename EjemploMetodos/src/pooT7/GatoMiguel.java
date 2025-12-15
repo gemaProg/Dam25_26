@@ -17,7 +17,7 @@ public class GatoMiguel {
     private Fecha nacimiento;
     private String nombre;
     private float peso;
-    public static String TIPO = "Felino";
+    public static final String TIPO = "Felino";
     //private String []Hermanos;
 
     //Tareas
@@ -58,32 +58,70 @@ public class GatoMiguel {
         peso = random.nextFloat();
     }
 
-    /*public GatoMiguel(boolean sexo, String negro, String persa, String gordo, String s, String lucifer, float peso) {
-
-    }*/
-
-    public boolean isSexo(){
+    public boolean isSexo() {
         return sexo;
     }
-    public void setSexo(boolean sexo){
+
+    public void setSexo(boolean sexo) {
         this.sexo = sexo;
     }
-    public String getColor(){
+
+    public String getColor() {
         return color;
     }
-    public void setColor(String color){
+
+    public void setColor(String color) {
         this.color = color;
     }
-    public String getRaza(){
+
+    public String getRaza() {
         return raza;
     }
-    public void setRaza(String raza){
+
+    public void setRaza(String raza) {
         this.raza = raza;
     }
-    public String getTamanyo(){
+
+    public String getTamanyo() {
         return tamanyo;
     }
+
+    public void setTamanyo(String tamanyo) {
+        this.tamanyo = tamanyo;
+    }
+
+    public Fecha getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(Fecha nacimiento) {
+        this.nacimiento = nacimiento;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+
+    public static String getTIPO() {
+        return TIPO;
+    }
+
+
     public String toString(){
         return GatoMiguel.TIPO.substring(0,GatoMiguel.TIPO.length()-1) + (sexo?"a":"o") + " me llamo "+ nombre + ", con color "+ color +",con raza "+ raza+ ", con tamaño "+  tamanyo+ ",que nací "+ nacimiento.toString()+ " y peso "+ String.format("%.2f",peso);
     }
+
+
 }

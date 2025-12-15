@@ -13,7 +13,7 @@ public class TesterMiguel {
         GatoMiguel [] gatos = new GatoMiguel [10];
         for (int i = 0; i < gatos.length/2; i++) {
             gatos[i] = new GatoMiguel();
-            System.out.println(gatos[i].toString());
+            System.out.println(gatos[i].toString());//no hace falta llamar al toString()
         }
         gatos[1] = null;
         gatos[gatos.length/2] = new GatoMiguel(false,"negro","persa","Gordo",new Fecha("02/05/2021"),"Lucifer",4.2f);
