@@ -1,6 +1,6 @@
 package pooT7.herencia;
 
-import pooT7.inicio.Fecha;
+import java.util.Random;
 
 public class Animal {
     private boolean sexo; //true femenino false masculino
@@ -14,7 +14,10 @@ public class Animal {
     }
 
     public Animal() {
-
+        Random rand = new Random();
+        sexo = rand.nextBoolean();
+        nacimiento = new Fecha();
+        nombre = Constantes.NOMBRES[rand.nextInt(Constantes.NOMBRES.length)];
     }
 
     public boolean isSexo() {
@@ -39,7 +42,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Perro{" +
+        return this.getClass().getSimpleName() + '{'+
                 "sexo=" + sexo +
                 ", nacimiento=" + nacimiento +
                 ", nombre='" + nombre + '\'' +

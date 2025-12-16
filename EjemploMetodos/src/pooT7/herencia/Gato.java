@@ -1,9 +1,22 @@
 package pooT7.herencia;
 
-import pooT7.inicio.Fecha;
+import java.util.Random;
 
 public class Gato extends Animal {
     private boolean arenero;
 
+    public Gato(boolean sexo, Fecha nacimiento, String nombre, boolean arenero) {
+        super(sexo, nacimiento, nombre);
+        this.arenero = arenero;
+    }
 
+    public Gato() {
+        Random rand = new Random();
+        arenero = rand.nextBoolean();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString().substring(0,super.toString().length()-1)+ (arenero?" Necesita arenero":" No lo necesita")+ '}';
+    }
 }
