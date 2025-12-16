@@ -1,4 +1,4 @@
-package pooT7;
+package pooT7.inicio;
 
 public class Constantes {
     public static final String [] NOMBRES = {"Lukas", "Ateneo", "Cookie", "Lucifer", "Nala", "Simba", "Groucho"};

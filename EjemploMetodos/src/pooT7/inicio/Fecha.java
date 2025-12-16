@@ -1,4 +1,4 @@
-package pooT7;
+package pooT7.inicio;
 
 import java.util.Random;
 
@@ -54,7 +54,18 @@ public class Fecha {
     public void setAnio(int anio){
         this.anio = anio;
     }
+
+    @Override
     public String toString(){
         return String.format("%02d/%02d/%02d", dia, mes, anio);
     }
+
+    /*@Override
+    public String toString() {
+        return "Fecha{" +
+                "dia=" + dia +
+                ", mes=" + mes +
+                ", anio=" + anio +
+                '}';
+    }*/
 }
