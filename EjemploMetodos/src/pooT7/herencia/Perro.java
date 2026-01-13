@@ -16,7 +16,13 @@ public class Perro extends Animal {
     }
 
     @Override
+    public String hazRuido() {
+        return "guau";
+    }
+
+    @Override
     public String toString() {
         return super.toString().substring(0,super.toString().length()-1)+ " numero de paseos "+ numPaseos+'}';
+
     }
 }

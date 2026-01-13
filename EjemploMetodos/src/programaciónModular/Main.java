@@ -1,4 +1,5 @@
 import programaciónModular.EntradaSalida;
+import programaciónModular.OperacionesPrimitivos;
 import programaciónModular.OperacionesString;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -10,7 +11,8 @@ public static int suma(int a, int b){
 void main() throws IOException {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
-
+    OperacionesPrimitivos operaciones = new OperacionesPrimitivos();
+    System.out.println(operaciones.suma(2,4));
     /*System.out.println("Introduce dos números");
     Scanner sc = new Scanner(System.in);
     int num1 = sc.nextInt();

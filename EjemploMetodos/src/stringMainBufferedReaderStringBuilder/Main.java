@@ -15,13 +15,15 @@ public class Main {
 
         String cadena = br.readLine();
         int numero = Integer.parseInt(cadena);
+
         System.out.println(numero);
 
         StringBuilder sb = new StringBuilder(cadena);
         for (int i = 0; i <= 10; i++) {
             /*estas formas concatenando String provocan la creación de un objeto distinto en cada iteración, pérdida de RAM
-            //cadena += i;
+            cadena += i;
             cadena = cadena.concat(String.valueOf(i));*/
+            sb.append(cadena);
             sb.append(i);
             System.out.println(sb.toString());
 

@@ -28,6 +28,7 @@ public class GatoMiguel {
         this.nombre = nombre;
     }
 
+
     public GatoMiguel(boolean sexo, String color, String raza, String tamanyo, Fecha nacimiento, String nombre, float peso) {
         this.sexo = sexo;
         this.color = color;
@@ -118,10 +119,22 @@ public class GatoMiguel {
         return TIPO;
     }
 
-
+/*
     public String toString(){
         return GatoMiguel.TIPO.substring(0,GatoMiguel.TIPO.length()-1) + (sexo?"a":"o") + " me llamo "+ nombre + ", con color "+ color +",con raza "+ raza+ ", con tamaño "+  tamanyo+ ",que nací "+ nacimiento.toString()+ " y peso "+ String.format("%.2f",peso);
     }
+*/
 
-
+    @Override
+    public String toString() {
+        return "GatoMiguel{" +
+                "sexo=" + sexo +
+                ", color='" + color + '\'' +
+                ", raza='" + raza + '\'' +
+                ", tamanyo='" + tamanyo + '\'' +
+                ", nacimiento=" + nacimiento +
+                ", nombre='" + nombre + '\'' +
+                ", peso=" + peso +
+                '}';
+    }
 }

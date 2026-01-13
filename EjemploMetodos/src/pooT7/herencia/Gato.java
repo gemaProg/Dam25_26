@@ -11,8 +11,14 @@ public class Gato extends Animal {
     }
 
     public Gato() {
+        super();
         Random rand = new Random();
         arenero = rand.nextBoolean();
+    }
+
+    @Override
+    public String hazRuido() {
+        return "miau";
     }
 
     @Override

@@ -5,8 +5,8 @@ import java.util.Random;
 public class GestorAnimales {
     private Animal[] animales;
 
-    public GestorAnimales() {
-        animales = new Animal[18];
+    public GestorAnimales(int tamanyo) {
+        animales = new Animal[tamanyo];
         for (int i = 0; i < animales.length / 2; i++) {
             Random random = new Random();
             int numero = random.nextInt(3);
@@ -17,6 +17,9 @@ public class GestorAnimales {
             else
                 animales[i] = new Perro();
         }
+    }
+    public GestorAnimales() {
+        this(18);
     }
 
     public GestorAnimales(Animal[] animales) {

@@ -2,10 +2,10 @@ package pooT7.herencia;
 
 import java.util.Random;
 
-public class Animal {
-    private boolean sexo; //true femenino false masculino
-    private Fecha nacimiento;
-    private String nombre;
+public abstract class Animal {
+    protected boolean sexo; //true femenino false masculino
+    protected Fecha nacimiento;
+    protected String nombre;
 
     public Animal(boolean sexo, Fecha nacimiento, String nombre) {
         this.sexo = sexo;
@@ -39,6 +39,8 @@ public class Animal {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public abstract String hazRuido();
 
     @Override
     public String toString() {
