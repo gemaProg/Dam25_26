@@ -1,4 +1,4 @@
-package pooT7.herencia;
+package poo.molimorfismo;
 
 import java.util.Random;
 
@@ -15,6 +15,14 @@ public class Perro extends Animal {
         numPaseos = rand.nextInt(7);
     }
 
+    public int getNumPaseos() {
+        return numPaseos;
+    }
+
+    public void setNumPaseos(int numPaseos) {
+        this.numPaseos = numPaseos;
+    }
+
     @Override
     public String hazRuido() {
         return "guau";
@@ -22,7 +30,8 @@ public class Perro extends Animal {
 
     @Override
     public String toString() {
-        return super.toString().substring(0,super.toString().length()-1)+ " numero de paseos "+ numPaseos+'}';
+        //return super.toString().substring(0,super.toString().length()-1)+ " numero de paseos "+ numPaseos+'}';
+        return super.toString()+"paseos: "+ numPaseos;
 
     }
 }

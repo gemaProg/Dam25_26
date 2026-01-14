@@ -1,4 +1,4 @@
-package pooT7.inicio;
+package poo.inicio;
 
 public class Utilidades {
     //métodos estáticos que sirvan para generar varios colores para los gatos

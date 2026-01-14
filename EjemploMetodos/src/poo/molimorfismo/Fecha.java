@@ -1,4 +1,4 @@
-package pooT7.inicio;
+package poo.molimorfismo;
 
 import java.util.Random;
 
@@ -12,52 +12,46 @@ public class Fecha {
         this.mes = mes;
         this.anio = anyo;
     }
-
     public Fecha() {
         Random rand = new Random();
         dia = rand.nextInt(30) + 1;
-        mes = rand.nextInt(1, 13);
-        ;
-        anio = rand.nextInt(1980, 2030);
+        mes = rand.nextInt(1,13);;
+        anio = rand.nextInt(1980,2030);
     }
 
     public Fecha(String fecha) {
-        //02/02/2002
         //opcion1 substring
         String diaString = fecha.substring(0, 2);
         dia = Integer.parseInt(diaString);
         //int dia = Integer.parseInt(fecha.substring(0,2));
         //opcion2
-        String[] trozos = fecha.split("/");
+        String []trozos = fecha.split("/");
         dia = Integer.parseInt(trozos[0]);
 
 
     }
 
-    public int getDia() {
+    public int getDia(){
         return dia;
     }
 
-    public int getMes() {
+    public int getMes(){
         return mes;
     }
-
-    public int getAnio() {
+    public int getAnio(){
         return anio;
     }
 
-    public void setDia(int dia) {
+    public void setDia(int dia){
         this.dia = dia;
     }
-
     /*public void setDia(int diaNuevo){
         dia = diaNuevo;
     }*/
-    public void setMes(int mes) {
+    public void setMes(int mes){
         this.mes = mes;
     }
-
-    public void setAnio(int anio) {
+    public void setAnio(int anio){
         this.anio = anio;
     }
 

@@ -1,4 +1,4 @@
-package pooT7.herencia;
+package poo.herencia;
 
 import java.util.Random;
 

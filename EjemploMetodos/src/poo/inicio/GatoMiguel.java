@@ -1,4 +1,4 @@
-package pooT7.inicio;
+package poo.inicio;
 
 import java.util.Random;
 

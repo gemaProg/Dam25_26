@@ -1,6 +1,4 @@
-package pooT7.inicio;
-
-import pooT7.herencia.Gato;
+package poo.inicio;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package pooT7.herencia;
+package poo.herencia;
 
 import java.util.Random;
 
@@ -14,11 +14,6 @@ public class Gato extends Animal {
         super();
         Random rand = new Random();
         arenero = rand.nextBoolean();
-    }
-
-    @Override
-    public String hazRuido() {
-        return "miau";
     }
 
     @Override

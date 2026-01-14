@@ -1,4 +1,4 @@
-package pooT7.inicio;
+package poo.inicio;
 
 public class Perro {
     //Tareas pendientes 16: otra clase similar a gato y perro
