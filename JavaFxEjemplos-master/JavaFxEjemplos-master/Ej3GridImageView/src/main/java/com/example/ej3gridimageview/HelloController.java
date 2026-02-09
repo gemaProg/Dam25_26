@@ -77,13 +77,10 @@ public class HelloController implements Initializable {
                 } else {
                     pane.setStyle("-fx-background-color: #cc888e");
                 }
+                //Preguntar si hay pieza, y mostrar el atributo nombrefichero para pintarla en el control mediante un ImageView
                 if (i == j) {
                     //addAll vs add
-                    pane.getChildren().add(new ImageView(new Image(
-                            "File:JavaFxEjemplos-master/Ej3GridImageView/src/main/resources/com/example/ej3gridimageview/imagenes/AlfilBlanco.png")));
-                            //"File:Ej3GridImageView/src/main/resources/com/example/ej3gridimageview/imagenes/CaballoBlanco.png")));
-
-                    //pane.getChildren().add(new ImageView(new Image("File:src/main/resources/com/example/ej3gridimageview/imagenes/CaballoBlanco.png")));
+                    pane.getChildren().add(new ImageView(new Image("File:JavaFxEjemplos-master/Ej3GridImageView/src/main/resources/com/example/ej3gridimageview/imagenes/AlfilBlanco.png")));
                 }
                 mainGrid.add(pane, j, i);
                 String message = "Click on cell ["+i+", "+j+"]";
