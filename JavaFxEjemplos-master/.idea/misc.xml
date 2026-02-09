@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej0/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej00/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej7CRUDFX/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej1HelloWorld/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej4Localizacion/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej3GridImageView/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej5dataFakeJavaFx/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej8MultiPantallas/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej6EjemploAhorcado/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaFxEjemplos-master/Ej2AlertComboPromocionPeon/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
