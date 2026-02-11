@@ -1,5 +1,6 @@
 package poo.herencia;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tester {
@@ -16,6 +17,10 @@ public class Tester {
 
         GestorAnimales gestorAnimales = new GestorAnimales();
         gestorAnimales.listarAnimales();
+        System.out.println(Arrays.toString(gestorAnimales.ordenar()));
+
+
+
 
 
     }

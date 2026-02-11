@@ -2,7 +2,7 @@ package poo.herencia;
 
 import java.util.Random;
 
-public class Animal {
+public class Animal implements Comparable<Animal> {
     protected boolean sexo; //true femenino false masculino
     protected Fecha nacimiento;
     protected String nombre;
@@ -48,4 +48,14 @@ public class Animal {
                 ", nombre='" + nombre + '\'' +
                 '}';
     }
+
+    @Override
+    public int compareTo(Animal otro) {
+        //return this.nombre.compareTo(otro.nombre);
+        return Integer.compare(this.nacimiento.getAnio(),otro.getNacimiento().getAnio());
+        /*int aux= this.nombre.compareTo(otro.nombre);
+        if (aux==0)
+            aux =Integer.compare(this.nacimiento.getAnio(),otro.getNacimiento().getAnio());;
+        return aux;*/
+        }
 }

@@ -1,5 +1,6 @@
 package poo.herencia;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class GestorAnimales {
@@ -49,9 +50,29 @@ public class GestorAnimales {
         }
     }
 
+    public Animal[] ordenar(){
+        Animal copia[] = new Animal[cuantosAnimales()];
+        for (int i = 0,j=0; i < animales.length; i++) {
+            if (animales[i]!=null){
+                copia[j] = animales[i];
+                j++;
+            }
+        }
+        System.out.println(copia.length);
 
+        Arrays.sort(copia);
+        return copia;
+    }
 
-
+    private int cuantosAnimales() {
+        int contador=0;
+        for (int i = 0; i < animales.length; i++) {
+            if (animales[i]!=null)
+                contador++;
+        }
+        System.out.println(contador);
+        return contador;
+    }
 
 
 }
