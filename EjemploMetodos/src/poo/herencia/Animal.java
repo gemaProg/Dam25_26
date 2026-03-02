@@ -49,13 +49,11 @@ public class Animal implements Comparable<Animal> {
                 '}';
     }
 
+
     @Override
     public int compareTo(Animal otro) {
-        //return this.nombre.compareTo(otro.nombre);
-        return Integer.compare(this.nacimiento.getAnio(),otro.getNacimiento().getAnio());
-        /*int aux= this.nombre.compareTo(otro.nombre);
-        if (aux==0)
-            aux =Integer.compare(this.nacimiento.getAnio(),otro.getNacimiento().getAnio());;
-        return aux;*/
-        }
+        //return this.nombre.compareTo(otro.getNombre());
+        //return this.nacimiento.getAnio()-otro.nacimiento.getAnio();
+        return Integer.compare(this.nacimiento.getAnio(),otro.nacimiento.getAnio());
+    }
 }

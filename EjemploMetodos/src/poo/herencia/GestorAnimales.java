@@ -58,8 +58,6 @@ public class GestorAnimales {
                 j++;
             }
         }
-        System.out.println(copia.length);
-
         Arrays.sort(copia);
         return copia;
     }
@@ -67,10 +65,9 @@ public class GestorAnimales {
     private int cuantosAnimales() {
         int contador=0;
         for (int i = 0; i < animales.length; i++) {
-            if (animales[i]!=null)
+            if (animales[i] != null)
                 contador++;
         }
-        System.out.println(contador);
         return contador;
     }
 
