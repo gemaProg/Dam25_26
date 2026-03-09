@@ -12,6 +12,7 @@ public class FlagTest {
         try {
             System.out.println("Introduce la longitud de la playa");
             int longitud = sc.nextInt();
+            sc.nextLine(); //limpieza
             System.out.println("Introduce bandera");
             String bandera = sc.nextLine();
             Comprobaciones.flagOk(bandera);
