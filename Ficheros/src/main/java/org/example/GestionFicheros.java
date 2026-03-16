@@ -99,7 +99,6 @@ public class GestionFicheros {
         }
         return sb.toString();
     }
-
     /**
      * Método que lee el fichero que contiene una lista de colores y nos devuelve un array donde en cada posición tenemos un color
      * @param nombreFichero que contiene los colores a cargar en RAM
