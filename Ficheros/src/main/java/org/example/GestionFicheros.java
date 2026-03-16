@@ -99,14 +99,43 @@ public class GestionFicheros {
         }
         return sb.toString();
     }
-
     /**
      * Método que lee el fichero que contiene una lista de colores y nos devuelve un array donde en cada posición tenemos un color
      * @param nombreFichero que contiene los colores a cargar en RAM
      * @return el array con los colores
      */
     public static String [] leerFicheroColoresCochesMiguel(String nombreFichero) {
-       return null;
+       String[] colores = new String[cuantosColoresHayFichero(nombreFichero)];
+        try {
+            Scanner lectorFichero = new Scanner(new File(nombreFichero));
+            for (int i=0;lectorFichero.hasNextLine();i++) {
+                colores[i]=lectorFichero.nextLine(); //no almaceno en ningún sitio lo leido
+            }
+            lectorFichero.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+        }
+       return colores;
+    }
+
+    /**
+     * Método que devuelve el número de líneas, en el caso concreto del fichero de colores, la cantidad de colores
+     * @param nombreFichero
+     * @return el número de líneas
+     */
+    private static int cuantosColoresHayFichero(String nombreFichero) {
+        int contadorColores = 0;
+        try {
+            Scanner lectorFichero = new Scanner(new File(nombreFichero));
+            while (lectorFichero.hasNextLine()) {
+                lectorFichero.nextLine(); //no almaceno en ningún sitio lo leido
+                contadorColores++;
+            }
+            lectorFichero.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+        }
+        return contadorColores;
     }
 
 
@@ -131,4 +160,15 @@ public class GestionFicheros {
     }
 
 
+    public static void escribirFicheroPW(String nombreFichero, String[] coches) {
+        try {
+            PrintWriter pw = new PrintWriter(nombreFichero);
+            for (int i = 0; i < coches.length; i++) {
+                pw.println(coches[i]);
+            }
+            pw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
