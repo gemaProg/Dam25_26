@@ -7,6 +7,7 @@ import java.util.ArrayList;
 //3. Borrar
 //4. Modificar
 //5. Listar devuelve un String con el contenido del ArrayList formateado para que desde otra clase se imprima
+// o directamente hacer el examen de la 2ev de gestión con ArrayList
 public class Database {
     private ArrayList<Persona> personas;
 
