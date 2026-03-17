@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -17,6 +18,8 @@ public class Main {
         lista.add("Álvaro");
         lista.add("Alejandra");
         lista.add("Luna");
+        lista.add("Javier");
+        lista.add("Javier");
         System.out.println(lista);
         System.out.println(lista.size());
         for (int i = 0; i < lista.size(); i++) {
@@ -25,7 +28,16 @@ public class Main {
                 System.out.println(lista.get(i));
             }
         }
-        lista.remove("Javier");
+
+        lista.set(5,"Daniel");
+        if (lista.remove("Javier"))
+            System.out.println("Elemento eliminado con éxito");
+        else
+            System.out.println("No existe el elemento");
+
+        for (int i = 0; i < lista.size(); i++) {
+            lista.remove("Javier");
+        }
         System.out.println(lista);
         lista.remove(5);
         lista.remove(lista.indexOf("Luna"));
