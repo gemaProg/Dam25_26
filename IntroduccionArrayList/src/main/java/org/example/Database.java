@@ -39,6 +39,12 @@ public class Database {
         }
     }
 
+    public boolean addPersona(Persona persona){
+        return personas.add(persona);
+    }
+
+
+
     @Override
     public String toString() {
         return "Database{" +

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 //17/3
 public class Main {
-    static void main() {
+    static void main(String[] args) {
         ArrayList<String> lista = new ArrayList<String>();
         lista.add("Sophia");
         lista.add("Alejandro");
@@ -42,6 +42,12 @@ public class Main {
         lista.remove(5);
         lista.remove(lista.indexOf("Luna"));
         System.out.println(lista);
+
+        ArrayList<Integer> listaNumeros = new ArrayList<>();
+        listaNumeros.add(1);
+        listaNumeros.add(2);
+        listaNumeros.add(3);
+        System.out.println(listaNumeros);
 
 
     }

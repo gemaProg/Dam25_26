@@ -1,5 +1,7 @@
 package org.example;
 
+import net.datafaker.Faker;
+
 import java.util.Random;
 
 public class Persona {
@@ -15,7 +17,8 @@ public class Persona {
 
     public Persona() {
         Random rand = new Random();
-        nombre = Constantes.NOMBRES[rand.nextInt(Constantes.NOMBRES.length)];
+        Faker faker = new Faker();
+        nombre=faker.detectiveConan().characters();
         nif = String.valueOf(rand.nextLong(10000000,99999999))+(char)(rand.nextInt(65,90));
     }
 

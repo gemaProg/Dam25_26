@@ -11,7 +11,11 @@ public class Main {
         System.out.println(Constantes.BIENVENIDA);
         GestionElementos ge = new GestionElementosImplementacion();
         System.out.println(ge.getListaElementos());
+        EntradaSalida es = new EntradaSalida(ge);
         EntradaSalida.mostrarListaElementos(ge);
+        System.out.println("Otra forma");
+        es.mostrarListaElementos();
+
         ge.insertarElemento(EntradaSalida.insertarElemento());
 
     }
