@@ -3,10 +3,15 @@ package org.example;
 public class Main3 {
     static void main() {
         Database db = new Database();
-        db.listar();
+        /*db.listar();
         System.out.println("---------------------------------");
         System.out.println(db.addPersona(EntradaSalida.damePersona()));
-        db.listar();
+        db.listar();*/
+        DatabaseCristopher dbCristopher = new DatabaseCristopher();
+        dbCristopher.listar();
+        dbCristopher.filtrarXedad(EntradaSalida.dameEdad());
+
+        db.modificarLuna(EntradaSalida.leernifLuna(),EntradaSalida.menuModificarLuna());
 
     }
 }

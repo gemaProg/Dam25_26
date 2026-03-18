@@ -1,26 +1,24 @@
 package org.example;
-
-import net.datafaker.Faker;
-
 import java.util.Random;
 
-public class Persona {
+public class PersonaCristopher{
     private String nombre;
     private String nif;
     private int edad;
 
 
-    public Persona(String nombre, String nif) {
+    public PersonaCristopher(String nombre, String nif, int edad) {
+        Random random = new Random();
         this.nombre = nombre;
         this.nif = nif;
+        this.edad = edad;
     }
 
-    public Persona() {
+    public PersonaCristopher() {
         Random rand = new Random();
-        Faker faker = new Faker();
-        nombre=faker.detectiveConan().characters();
+        nombre = Constantes.NOMBRES[rand.nextInt(Constantes.NOMBRES.length)];
         nif = String.valueOf(rand.nextLong(10000000,99999999))+(char)(rand.nextInt(65,90));
-        edad = rand.nextInt(16,32);
+        edad = rand.nextInt(18,30);
     }
 
     public int getEdad() {
@@ -52,6 +50,7 @@ public class Persona {
         return "Persona{" +
                 "nombre='" + nombre + '\'' +
                 ", nif='" + nif + '\'' +
+                ", edad=" + edad +
                 '}';
     }
 }

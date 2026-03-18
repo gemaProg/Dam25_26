@@ -43,6 +43,25 @@ public class Database {
         return personas.add(persona);
     }
 
+    public void modificarLuna(String nif, String modificacion){
+        for (int i = 0; i < personas.size(); i++) {
+            if(personas.get(i).getNif().equals(nif)){
+                String trozos[] = modificacion.split(";");
+                switch (trozos[0]){
+                    case "1":
+                        personas.get(i).setNombre(trozos[1]);
+                        break;
+                    case "2":
+                        personas.get(i).setNif(trozos[1]);
+                        break;
+                    case "3":
+                        personas.get(i).setEdad(Integer.parseInt(trozos[1]));
+                        break;
+                }
+                System.out.println(personas.get(i));
+            }
+        }
+    }
 
 
     @Override
