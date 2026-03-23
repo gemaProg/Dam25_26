@@ -57,7 +57,10 @@ public class Persona implements Comparable<Persona> {
 
     @Override
     public int compareTo(Persona o) {
-        //return o.getNif().compareTo(this.getNif());
-        return this.getNombre().compareTo(o.getNombre());
+        /*int resultado =this.getNombre().compareTo(o.getNombre();
+        if (resultado==0)
+                resultado = o.getNif().compareTo(this.getNif());
+        return resultado;*/
+        return o.getNif().compareTo(this.getNif());
     }
 }

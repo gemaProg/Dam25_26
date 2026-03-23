@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 //deberes
@@ -72,9 +73,21 @@ public class Database {
     }
 
     public void ordenar(boolean ascendente){
-        Collections.sort(personas);
+        Collections.sort(personas); //ordena en base al orden natural establecido al implementar la interfaz Comparable<Persona>
         if (!ascendente)
             Collections.reverse(personas);
+    }
+
+    public void ordenarNombre(boolean ascendente) {
+        Collections.sort(personas, new porNombre());
+        if (!ascendente)
+            Collections.reverse(personas);
+        /*Collections.sort(personas, new Comparator<Persona>() {
+            @Override
+            public int compare(Persona o1, Persona o2) {
+                return o1.getNombre().compareTo(o2.getNombre());
+            }
+        });*/
 
     }
     public List<Integer> crearListasDeOtras(){
@@ -102,4 +115,6 @@ public class Database {
                 "personas=" + personas +
                 '}';
     }
+
+
 }

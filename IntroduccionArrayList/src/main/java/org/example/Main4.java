@@ -11,5 +11,6 @@ public class Main4 {
         System.out.println(db.eliminar(0));
         System.out.println("--------------------TRAS ELIMINAR EL PRIMER ELEMENTO----------------");
         db.listar();
+
     }
 }
