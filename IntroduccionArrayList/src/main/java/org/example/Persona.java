@@ -4,7 +4,7 @@ import net.datafaker.Faker;
 
 import java.util.Random;
 
-public class Persona {
+public class Persona implements Comparable<Persona> {
     private String nombre;
     private String nif;
     private int edad;
@@ -53,5 +53,11 @@ public class Persona {
                 "nombre='" + nombre + '\'' +
                 ", nif='" + nif + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        //return o.getNif().compareTo(this.getNif());
+        return this.getNombre().compareTo(o.getNombre());
     }
 }
