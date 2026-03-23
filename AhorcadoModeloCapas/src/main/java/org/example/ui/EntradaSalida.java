@@ -38,6 +38,7 @@ public class EntradaSalida {
         System.out.println(Constantes.INSERTAR);
         String id = lector.nextLine();
         String palabra = lector.nextLine();
+        //pendiente el tratamiento correcto de pedir otra palabra con un bucle
         try {
             Comprobaciones.comprobarPalabra(palabra);
         } catch (ExcepcionCaracterEspecial e) {
@@ -46,5 +47,10 @@ public class EntradaSalida {
         String categoria = lector.nextLine();
         return new Elemento(id,palabra,categoria);
     }
+
+    public GestionElementos getServicio() {
+        return servicio;
+    }
+
 
 }
