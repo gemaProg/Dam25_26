@@ -1,7 +1,7 @@
 package org.example;
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 public class GestionFicheros {
     public static final String NOMBRE_DE_FICHERO = "Fichero";
@@ -124,7 +124,7 @@ public class GestionFicheros {
         try {
             Scanner lectorFichero = new Scanner(new File(nombreFichero));
             for (int i=0;lectorFichero.hasNextLine();i++) {
-                colores[i]=lectorFichero.nextLine(); //no almaceno en ningún sitio lo leido
+                colores[i]=lectorFichero.nextLine();
             }
             lectorFichero.close();
         } catch (FileNotFoundException e) {
@@ -133,6 +133,43 @@ public class GestionFicheros {
        return colores;
     }
 
+    /**
+     * Método que  que lee el fichero que contiene una lista de colores y nos devuelve un arrayList donde en cada posición tenemos un color
+     * @param nombreFichero
+     * @return ArrayList con los colores del fichero
+     */
+    public static List<String> leerFicheroArrayList(String nombreFichero) {
+        List<String> colores = new ArrayList<String>();
+        try {
+            Scanner lectorFichero = new Scanner(new File(nombreFichero));
+            for (int i=0;lectorFichero.hasNextLine();i++) {
+                colores.add(lectorFichero.nextLine());
+            }
+            lectorFichero.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+        }
+        return colores;
+    }
+
+    /**
+     * Método que  que lee el fichero que contiene una lista de colores y nos devuelve un treeSet donde en cada posición tenemos un texto, odenado y sin duplicados
+     * @param nombreFichero
+     * @return ArrayList con los colores del fichero
+     */
+    public static Set<String> leerFicheroTreeSet(String nombreFichero) {
+        Set<String> colores = new TreeSet<String>();
+        try {
+            Scanner lectorFichero = new Scanner(new File(nombreFichero));
+            for (int i=0;lectorFichero.hasNextLine();i++) {
+                colores.add(lectorFichero.nextLine());
+            }
+            lectorFichero.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");
+        }
+        return colores;
+    }
     /**
      * Método que devuelve el número de líneas, en el caso concreto del fichero de colores, la cantidad de colores
      * @param nombreFichero
@@ -185,5 +222,23 @@ public class GestionFicheros {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * Escribir el contenido del ArrayList en un fichero
+     * @param nombreFichero
+     * @param coches
+     */
+    public static void escribirFicheroPWArrayList(String nombreFichero, List<String> coches) {
+        try {
+            PrintWriter pw = new PrintWriter(nombreFichero);
+            for (int i = 0; i < coches.size(); i++) {
+                pw.println(coches.get(i));
+            }
+            pw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
