@@ -17,6 +17,7 @@
         <module name="Ej2AlertComboPromocionPeon" />
         <module name="EjemploAhorcado" />
         <module name="CRUDFX" />
+        <module name="AhorcadoModeloCapas" />
         <module name="javafxFaker2" />
         <module name="Ej1HelloWorld" />
         <module name="CRUDFX (1)" />

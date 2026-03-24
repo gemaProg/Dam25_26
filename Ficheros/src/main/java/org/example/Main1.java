@@ -35,7 +35,7 @@ public class Main1 {
             } else
                 System.out.println(f.createNewFile()?"Fichero creado":"Fichero no creado porque no tiene permisos");
             */
-
+            //GestionFicheros.escribirFicheroPWFW("asdf", "asdf del fichero", true);
 
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado");

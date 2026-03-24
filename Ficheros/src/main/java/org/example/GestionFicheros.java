@@ -6,22 +6,47 @@ import java.util.*;
 public class GestionFicheros {
     public static final String NOMBRE_DE_FICHERO = "Fichero";
 
-    /*public static void escribirFicheroPW(String nombreFichero) throws FileNotFoundException {
+
+    public static String crearFichero(String nombreFichero) throws FileNotFoundException {
+        File f = new File(nombreFichero);
+        String respuesta = null;
+
+        if (f.exists()) {
+            respuesta = "Fichero ya existe y su tamaño es: " + f.length();
+        } else {
+
+            try {
+                respuesta = f.createNewFile() ? "Fichero creado" : "Fichero no creado porque no tiene permisos";
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+
+        }
+        //El flujo se puede establecer no sólo con el nombre del fichero sino también con un objeto de tipo File, el manejador
+        // PrintWriter pw = new PrintWriter(f);
+
+
+        return respuesta;
+    }
+
+    public static void escribirFicheroPW1(String nombreFichero) throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(nombreFichero);
         pw.println("Hola, ya estamos escribiendo un fichero");
         pw.close();
-    }*/
-    /*public static void escribirFicheroPW(String nombreFichero) {
+    }
+
+    public static void escribirFicheroPW2(String nombreFichero) {
         PrintWriter pw = null;
         try {
             pw = new PrintWriter(nombreFichero);
             pw.println("Hola, ya estamos escribiendo un fichero");
             pw.close();
         } catch (FileNotFoundException e) {
-
+            System.out.println("Fichero no encontrado");
         }
-    }*/
-    public static void escribirFicheroPW(String nombreFichero) {
+    }
+
+    public static void escribirFicheroPW3(String nombreFichero) {
         // try catch con recursos, el cierre del fichero lo hace java automáticamente
         try (PrintWriter pw = new PrintWriter(nombreFichero)) {
             pw.println("Hola, ya estamos escribiendo un fichero");
@@ -31,10 +56,10 @@ public class GestionFicheros {
     }
 
     public static void escribirFicheroPW() {
-        escribirFicheroPW(NOMBRE_DE_FICHERO);
+        escribirFicheroPW2(NOMBRE_DE_FICHERO);
     }
 
-    /*public static void escribirFicheroFW(String nombreFichero, String texto, boolean append) {
+    public static void escribirFicheroFW1(String nombreFichero, String texto, boolean append) {
         try {
             FileWriter fw = new FileWriter(nombreFichero, append);
             fw.write(texto + "\n");
@@ -42,9 +67,9 @@ public class GestionFicheros {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
 
-    public static void escribirFicheroFW(String nombreFichero, String texto, boolean append) {
+    public static void escribirFicheroFW2(String nombreFichero, String texto, boolean append) {
         // try catch con recursos, el cierre del fichero lo hace java automáticamente
 
         try (FileWriter fw = new FileWriter(nombreFichero, append)) {
@@ -59,13 +84,45 @@ public class GestionFicheros {
         try {
            /* FileWriter fw = new FileWriter(nombreFichero, append);
             PrintWriter pw = new PrintWriter(fw);*/
-            PrintWriter pw = new PrintWriter(new FileWriter(nombreFichero,append));
+            PrintWriter pw = new PrintWriter(new FileWriter(nombreFichero, append));
             pw.println(texto);
             //pw.printf("%s\n",texto);
             pw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void escribirFicheroPW(String nombreFichero, String[] coches) {
+        try {
+            PrintWriter pw = new PrintWriter(nombreFichero);
+            for (int i = 0; i < coches.length; i++) {
+                pw.println(coches[i]);
+            }
+            pw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Escribir el contenido del ArrayList en un fichero
+     *
+     * @param nombreFichero
+     * @param coches
+     */
+    public static void escribirFicheroPWArrayList(String nombreFichero, List<String> coches) {
+        try (PrintWriter pw = new PrintWriter(nombreFichero)){
+        //try{
+            //PrintWriter pw = new PrintWriter(nombreFichero);
+            for (int i = 0; i < coches.size(); i++) {
+                pw.println(coches.get(i));
+            }
+        //    pw.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public static void leerFichero() {
@@ -84,18 +141,19 @@ public class GestionFicheros {
     }
 
     public static String leerFicheroFR(String nombreFichero) {
-        StringBuilder sb= new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         try {
             BufferedReader lectorFichero = new BufferedReader(new FileReader(nombreFichero));
-            String linea= null;
-            do{
+            String linea = null;
+            do {
                 linea = lectorFichero.readLine();
                 sb.append(linea).append("\n");
-            }while(linea!=null);
+            } while (linea != null);
         } catch (IOException e) { //incluye a la FileNotFound por herencia
             System.out.println(e.getMessage());
         }
-        return sb.delete(sb.length()-5, sb.length()).toString();
+       return sb.delete(sb.length() - 5, sb.length()).toString(); //en vez de poner un if (linea!=null)
+       //return sb.toString(); //imprime null, lo quito con la sentencia de arriba
     }
 
     public static String leerFichero(String nombreFichero) {
@@ -114,27 +172,32 @@ public class GestionFicheros {
         }
         return sb.toString();
     }
+
     /**
      * Método que lee el fichero que contiene una lista de colores y nos devuelve un array donde en cada posición tenemos un color
+     *
      * @param nombreFichero que contiene los colores a cargar en RAM
      * @return el array con los colores
      */
-    public static String [] leerFicheroColoresCochesMiguel(String nombreFichero) {
-       String[] colores = new String[cuantosColoresHayFichero(nombreFichero)];
+    public static String[] leerFicheroColoresCochesMiguel(String nombreFichero) {
+        int cuantos = cuantosColoresHayFichero(nombreFichero);
+        String[] colores = new String[cuantos];
         try {
             Scanner lectorFichero = new Scanner(new File(nombreFichero));
-            for (int i=0;lectorFichero.hasNextLine();i++) {
-                colores[i]=lectorFichero.nextLine();
+            //for (int i = 0; lectorFichero.hasNextLine(); i++) {
+            for (int i = 0; i<cuantos; i++) {
+                colores[i] = lectorFichero.nextLine();
             }
             lectorFichero.close();
         } catch (FileNotFoundException e) {
             System.out.println("Fichero no encontrado");
         }
-       return colores;
+        return colores;
     }
 
     /**
      * Método que  que lee el fichero que contiene una lista de colores y nos devuelve un arrayList donde en cada posición tenemos un color
+     *
      * @param nombreFichero
      * @return ArrayList con los colores del fichero
      */
@@ -142,7 +205,7 @@ public class GestionFicheros {
         List<String> colores = new ArrayList<String>();
         try {
             Scanner lectorFichero = new Scanner(new File(nombreFichero));
-            for (int i=0;lectorFichero.hasNextLine();i++) {
+            for (int i = 0; lectorFichero.hasNextLine(); i++) {
                 colores.add(lectorFichero.nextLine());
                 //colores.add(new Elemento(lectorFichero.nextLine()));
             }
@@ -155,6 +218,7 @@ public class GestionFicheros {
 
     /**
      * Método que  que lee el fichero que contiene una lista de colores y nos devuelve un treeSet donde en cada posición tenemos un texto, odenado y sin duplicados
+     *
      * @param nombreFichero
      * @return ArrayList con los colores del fichero
      */
@@ -162,7 +226,7 @@ public class GestionFicheros {
         Set<String> colores = new TreeSet<String>();
         try {
             Scanner lectorFichero = new Scanner(new File(nombreFichero));
-            for (int i=0;lectorFichero.hasNextLine();i++) {
+            for (int i = 0; lectorFichero.hasNextLine(); i++) {
                 colores.add(lectorFichero.nextLine());
             }
             lectorFichero.close();
@@ -171,8 +235,11 @@ public class GestionFicheros {
         }
         return colores;
     }
+
+
     /**
      * Método que devuelve el número de líneas, en el caso concreto del fichero de colores, la cantidad de colores
+     *
      * @param nombreFichero
      * @return el número de líneas
      */
@@ -189,57 +256,5 @@ public class GestionFicheros {
             System.out.println("Fichero no encontrado");
         }
         return contadorColores;
-    }
-
-
-    public static String crearFichero(String nombreFichero) throws FileNotFoundException {
-        File f = new File(nombreFichero);
-        String respuesta = null;
-
-        if (f.exists()) {
-            respuesta = "Fichero ya existe y su tamaño es: " + f.length();
-        } else {
-            try {
-                respuesta = f.createNewFile() ? "Fichero creado" : "Fichero no creado porque no tiene permisos";
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        //El flujo se puede establecer no sólo con el nombre del fichero sino también con un objeto de tipo File, el manejador
-        // PrintWriter pw = new PrintWriter(f);
-
-
-        return respuesta;
-    }
-
-
-    public static void escribirFicheroPW(String nombreFichero, String[] coches) {
-        try {
-            PrintWriter pw = new PrintWriter(nombreFichero);
-            for (int i = 0; i < coches.length; i++) {
-                pw.println(coches[i]);
-            }
-            pw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * Escribir el contenido del ArrayList en un fichero
-     * @param nombreFichero
-     * @param coches
-     */
-    public static void escribirFicheroPWArrayList(String nombreFichero, List<String> coches) {
-        try {
-            PrintWriter pw = new PrintWriter(nombreFichero);
-            for (int i = 0; i < coches.size(); i++) {
-                pw.println(coches.get(i));
-            }
-            pw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 }
