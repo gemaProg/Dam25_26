@@ -79,7 +79,8 @@ public class Database {
     }
 
     public void ordenarNombre(boolean ascendente) {
-        Collections.sort(personas, new porNombre());
+        personas.sort(new porNombre());
+        //Collections.sort(personas, new porNombre());
         if (!ascendente)
             Collections.reverse(personas);
         /*Collections.sort(personas, new Comparator<Persona>() {
