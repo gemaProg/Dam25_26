@@ -144,6 +144,7 @@ public class GestionFicheros {
             Scanner lectorFichero = new Scanner(new File(nombreFichero));
             for (int i=0;lectorFichero.hasNextLine();i++) {
                 colores.add(lectorFichero.nextLine());
+                //colores.add(new Elemento(lectorFichero.nextLine()));
             }
             lectorFichero.close();
         } catch (FileNotFoundException e) {

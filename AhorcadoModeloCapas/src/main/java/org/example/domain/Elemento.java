@@ -23,6 +23,14 @@ public class Elemento {
 
     }
 
+    public Elemento (String lineafichero){
+        //2;Homer Simpson;serie
+        String []trozos =  lineafichero.split(";");
+        this.id = trozos[0];
+        this.palabra = trozos[1];
+        this.categoria = trozos[2];
+    }
+
     public String getId() {
         return id;
     }
