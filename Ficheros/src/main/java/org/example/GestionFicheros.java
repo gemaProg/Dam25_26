@@ -1,11 +1,12 @@
 package org.example;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class GestionFicheros {
     public static final String NOMBRE_DE_FICHERO = "Fichero";
-
+    public static final String NOMBRE_DE_FICHERO_BINARIO = "Binary";
 
     public static String crearFichero(String nombreFichero) throws FileNotFoundException {
         File f = new File(nombreFichero);
@@ -123,6 +124,46 @@ public class GestionFicheros {
             throw new RuntimeException(e);
         }
 
+    }
+    //Ficheros Binarios
+    public static void escribirBinary(String texto){
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(NOMBRE_DE_FICHERO_BINARIO));
+            oos.writeObject(texto);
+            oos.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    //Así no
+    public static void escribirBinaryPalabras(List<Palabra> lista){
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(NOMBRE_DE_FICHERO_BINARIO));
+            for (int i = 0; i < lista.size(); i++) {
+                oos.writeObject(lista.get(i));
+            }
+            oos.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Así no
+    public static List<Palabra> leerBinaryPalabras(){
+        List<Palabra> palabras = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(NOMBRE_DE_FICHERO_BINARIO))) {
+            for (int i = 0; i < 4 ; i++) { //y si no son 4
+                palabras.add((Palabra)ois.readObject() );
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return palabras;
     }
 
     public static void leerFichero() {
@@ -256,5 +297,30 @@ public class GestionFicheros {
             System.out.println("Fichero no encontrado");
         }
         return contadorColores;
+    }
+    //Ficheros Binarios
+    //Así sí
+    public static void escribirBinaryPalabrasDeUna(List<Palabra> lista){
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(NOMBRE_DE_FICHERO_BINARIO));
+            oos.writeObject(lista);
+            oos.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    //Así sí
+    public static List<Palabra> leerFicheroBinario() {
+        List<Palabra> palabras = null;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(NOMBRE_DE_FICHERO_BINARIO))) {
+            palabras = (List<Palabra>) ois.readObject();
+        } catch (FileNotFoundException e) {
+            System.out.println("Fichero no encontrado");;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return palabras;
     }
 }
