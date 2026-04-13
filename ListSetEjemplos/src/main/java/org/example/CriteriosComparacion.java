@@ -45,7 +45,7 @@ class porIncognita implements Comparator<Palabra>{
 class porCategoria implements Comparator<Palabra> {
     @Override
     public int compare(Palabra o1, Palabra o2) {
-        return o1.getCategoriaString().compareTo(o2.getCategoriaString());
+        return o2.getCategoriaString().compareTo(o1.getCategoriaString());
     }
 }
 

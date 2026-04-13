@@ -59,27 +59,25 @@ public class Palabra implements Comparable<Palabra> {
         return getClass().getSimpleName()+"{" + "id=" + id + ", nivel=" + nivel + ", categoriaString=" + categoriaString + ", adivinarString=" + adivinarString + '}';
     }
 
-    public String toStringFichero() {
-        return id + ";" + nivel + ";" + categoriaString + ";" + adivinarString;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Palabra palabra = (Palabra) o;
-        return id == palabra.id && nivel == palabra.nivel && Objects.equals(categoriaString, palabra.categoriaString) && Objects.equals(adivinarString, palabra.adivinarString);
+        return id == palabra.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nivel, categoriaString, adivinarString);
+        return Objects.hashCode(id);
     }
 
     @Override
     public int compareTo(Palabra o) {
         return this.adivinarString.compareTo(o.adivinarString);
         //return Integer.compare(this.id, o.id);
+    }
+    public String toStringFichero() {
+        return id + ";" + nivel + ";" + categoriaString + ";" + adivinarString;
     }
 
 }
