@@ -17,7 +17,7 @@ public class ListSetEjemplos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-/*
+
         ArrayList<String> lista = new ArrayList();
         lista.add("Nerea");
         lista.add("Kiarash");
@@ -72,17 +72,17 @@ public class ListSetEjemplos {
         Iterator<String> it = conjunto.iterator();
         System.out.println("-------------------------------ITERATOR------------------------");
        // boolean salir = false;
-        while(it.hasNext() /*&& !salir){*/
-         //   String aux = it.next();
-         /*   if (aux.equalsIgnoreCase("Nerea")){
-                salir=true;
-            }*/
-           /* System.out.println(aux);
-            System.out.println(aux.toUpperCase());*/
+        while(it.hasNext() /*&& !salir*/){
+           String aux = it.next();
+          // if (aux.equalsIgnoreCase("Nerea"))
+          //      salir=true;
+
+           System.out.println(aux);
+           System.out.println(aux.toUpperCase());
             /*System.out.println(it.next());
             System.out.println(it.next().toUpperCase());*/
-      //  }
-       /* System.out.println("-------------------------------FOR EACH------------------------");
+       }
+        System.out.println("-------------------------------FOR EACH------------------------");
         for (String elemento : conjunto) {
             System.out.println(elemento);
             System.out.println(elemento.toUpperCase());
@@ -95,8 +95,8 @@ public class ListSetEjemplos {
             System.out.println(listaTree.get(i));
         }
         System.out.println(conjunto.size());
-*/
-/*
+
+
         System.out.println("----------------------------HashSet----------------------------------");
         Set<String> conjunto2 = new HashSet<>();
         conjunto2.add("Nerea");
@@ -133,7 +133,7 @@ public class ListSetEjemplos {
         ArrayList<Palabra> al = new ArrayList<>(ts);
         al.sort(new porNivel());
         System.out.println(al);
-*/
+
         TreeSet<Palabra> ts1 = new TreeSet<>(new porCategoria()); // compare (comparator)
         ts1.add(new Palabra(1,1,"comida","arroz"));
         ts1.add(new Palabra(2,2,"comida","patatas"));
@@ -142,7 +142,7 @@ public class ListSetEjemplos {
         ts1.add(new Palabra(5,3,"comidaBasura","pizza"));
         System.out.println(ts1); //toString de Object
 
-/*
+
         HashSet<Palabra> hs = new HashSet<>(); //equals
         hs.add(new Palabra(1,1,"comida","arroz"));
         hs.add(new Palabra(2,1,"comida","patatas"));
@@ -151,7 +151,7 @@ public class ListSetEjemplos {
         hs.add(new Palabra(1,1,"comida","arroz"));
         System.out.println(hs.size());
         System.out.println(hs);
-*/
+
     }
 
 }
