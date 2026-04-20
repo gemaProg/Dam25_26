@@ -17,7 +17,6 @@ public class ListSetEjemplos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
         ArrayList<String> lista = new ArrayList();
         lista.add("Nerea");
         lista.add("Kiarash");
