@@ -15,6 +15,7 @@
         <module name="Ej0" />
         <module name="Ej4Localizacion" />
         <module name="Ej2AlertComboPromocionPeon" />
+        <module name="IntroduccionArrayList" />
         <module name="EjemploAhorcado" />
         <module name="CRUDFX" />
         <module name="AhorcadoModeloCapas" />
