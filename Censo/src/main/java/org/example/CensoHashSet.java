@@ -282,6 +282,7 @@ public class CensoHashSet implements Serializable {
 
         //2a. Stream y chequeo si null directamente
         censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).findFirst().ifPresent(individuo -> individuo.poblacion = poblacion);
+        censo.stream().filter(individuo -> individuo.nombre.equalsIgnoreCase(nombre)).findAny().ifPresent(individuo -> individuo.poblacion = poblacion);
 
     }
     public void alta() throws IOException {

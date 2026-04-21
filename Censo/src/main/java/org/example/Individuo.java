@@ -74,8 +74,6 @@ public class Individuo implements Serializable, Comparable<Individuo>{
         return String.format("%-12s %2d",nombre, edad);
     }
 
-
-
     public void imprimir(){
         System.out.println(nombre+ "     "+ edad);
     }
