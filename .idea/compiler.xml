@@ -25,6 +25,7 @@
         <module name="Ej1HelloWorld" />
         <module name="CRUDFX (1)" />
         <module name="ListSetEjemplos" />
+        <module name="EjemploJSON" />
       </profile>
     </annotationProcessing>
   </component>

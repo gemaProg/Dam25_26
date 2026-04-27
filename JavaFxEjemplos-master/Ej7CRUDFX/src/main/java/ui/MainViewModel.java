@@ -2,11 +2,13 @@ package ui;
 
 import dao.DaoAnimales;
 import domain.modelo.Animal;
+import lombok.Getter;
 import servicios.ServicioAnimales;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class MainViewModel {
+    @Getter
     private final ServicioAnimales servicioAnimales;
     private final ObservableList<Animal> animals;
 
@@ -23,5 +25,4 @@ public class MainViewModel {
         return animals;
     }
 
-    public ServicioAnimales getServicioAnimales() { return servicioAnimales; }
 }

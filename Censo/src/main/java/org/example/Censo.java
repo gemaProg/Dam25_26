@@ -279,7 +279,7 @@ public class Censo implements Serializable {
             System.out.println();
         }
 
-        Map<String,List<Individuo>> porProvincia = censo.stream().collect(groupingBy(Individuo::getPoblacion));
+        Map<String,List<Individuo>> porProvincia = new TreeMap<>(censo.stream().collect(groupingBy(Individuo::getPoblacion)));
         porProvincia.forEach((k,v)-> System.out.println("Provincia: "+ k+ " "+v.stream().map(Individuo::getEdad).toList()));
         porProvincia.forEach((k,v)-> System.out.println("Provincia: "+ k+ " "+v.stream().mapToInt(Individuo::getEdad).max().getAsInt()));
 
