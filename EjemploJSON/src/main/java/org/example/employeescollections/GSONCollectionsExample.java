@@ -15,6 +15,7 @@ public class GSONCollectionsExample {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         Collection < Integer > ints = Arrays.asList(1, 2, 3, 4, 5);
         //Collection < Integer > ints = List.of(1, 2, 3, 4, 5);
+
         System.out.println(ints);
         // Serialization of integer
         String json = gson.toJson(ints);
@@ -25,6 +26,8 @@ public class GSONCollectionsExample {
                 new Employee("firstName3", "lastName3"),
                 new Employee("firstName4", "lastName4"),
                 new Employee("firstName5", "lastName5"));
+
+
         // Serialization of collection of employees
         String empJson = gson.toJson(employees);
         System.out.println(empJson);
@@ -60,6 +63,8 @@ public class GSONCollectionsExample {
         Type type = new TypeToken < Collection < Employee >> () {}.getType();
         Collection < Employee > collectionOfEmp = gson.fromJson(employeeJson, type);
         System.out.println(collectionOfEmp);
+
+
     }
 }
 

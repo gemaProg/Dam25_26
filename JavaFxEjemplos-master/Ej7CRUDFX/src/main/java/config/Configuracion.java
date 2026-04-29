@@ -9,7 +9,7 @@ public class Configuracion {
     public String loadPathProperties(){
         Properties properties= new Properties();
         try {
-            InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties");
+            InputStream input = getClass().getClassLoader().getResourceAsStream("config2.properties");
             properties.load(input);
             return (String)properties.get("pathJson");
         } catch (IOException e) {

@@ -1,5 +1,7 @@
 package org.example.students;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;

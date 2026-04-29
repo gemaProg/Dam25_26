@@ -43,7 +43,6 @@ public class GSONCustomSerDerExample {
         // Convert to java objects
         Order one = gson.fromJson(orderJson, Order.class);
         System.out.println(one);
-
     }
 
 }

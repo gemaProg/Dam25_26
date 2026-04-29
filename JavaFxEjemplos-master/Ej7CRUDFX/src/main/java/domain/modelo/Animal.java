@@ -1,9 +1,11 @@
 package domain.modelo;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.util.Objects;
 
 @Data
+@AllArgsConstructor
 public class Animal {
     private final String id;
     private final String nombre;
@@ -22,4 +24,5 @@ public class Animal {
     public int hashCode() {
         return Objects.hash(nombre);
     }
+
 }

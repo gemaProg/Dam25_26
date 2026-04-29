@@ -1,10 +1,11 @@
 package dao;
 
 import domain.modelo.Animal;
+import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Log4j2
 public class DaoAnimales {
 
     private final Database db;

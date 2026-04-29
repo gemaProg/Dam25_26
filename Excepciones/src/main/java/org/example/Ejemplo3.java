@@ -16,11 +16,10 @@ public class Ejemplo3 {
                 System.out.println(e.getMessage());
             }
         }
-
+        System.out.println("asdf");
         int [][] tabla = new int[10][5];
 
-       /* for (int i = 0; i < tabla.length ; i++) {
-
+       for (int i = 0; i < tabla.length ; i++) {
             for (int j = -1; j < tabla[i].length; j++) {
                 System.out.print(tabla[i][j]);
                 System.out.println(tabla[j+j]);
@@ -37,6 +36,6 @@ public class Ejemplo3 {
             }catch (NullPointerException e){
                 System.err.println(e.getMessage());
             }
-        }*/
+        }
     }
 }
